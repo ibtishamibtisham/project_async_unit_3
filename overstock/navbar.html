@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" type="text/css" href="your_website_domain/css_root/flaticon.css"> -->
+    <style>
+      header {
+        width: 1370px;
+        height: 150px;
+        overflow: hidden;
+        position: sticky;
+        top: 0;
+      }
+      /* #empty {
+        width: 1349px;
+        height: 150px;
+      } */
+      #navbar_part1 {
+        height: 29px;
+        background-color: rgba(249, 250, 251, 255);
+        /* border: 0.2px solid #e1e2e5; */
+      }
+      #categories {
+        height: 33px;
+        background-color: rgba(249, 250, 251, 255);
+        display: flex;
+        justify-content: space-evenly;
+      }
+      #vertical {
+        border-left: 1px solid rgb(235, 232, 232);
+        height: 15px;
+        margin-top: 5px;
+      }
+      #nav_items {
+        height: 90px;
+        display: grid;
+        grid-template-columns: 290px auto 290px;
+        background-color: rgba(255, 255, 255, 255);
+      }
+
+      #Container_home {
+        width: 1349px;
+        height: 2000px;
+        margin: 0%;
+      }
+      #categories div {
+        padding-top: 5px;
+        color: #44484c;
+      }
+      .d2 {
+        display: flex;
+      }
+      input {
+        width: 700px;
+        margin-top: 30px;
+        height: 34px;
+        background: rgba(249, 250, 251, 255);
+        border: 0.2px solid #e1e2e5;
+        border-radius: 3px;
+      }
+      .d3 {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 30px;
+        color: #44484c;
+      }
+      button {
+        height: 34px;
+      }
+      #search {
+        height: 38px;
+        width: 38px;
+        background-color: #ff1f2c;
+        margin-top: 30px;
+      }
+      .offers_cont {
+        width: 1349px;
+        height: 70px;
+        background-color: rgba(255, 255, 255, 255);
+        margin: 0%;
+      }
+      h1 {
+        text-align: center;
+      }
+      .offers_div {
+        display: flex;
+        justify-content: space-evenly;
+        height: 200px;
+        width: 1349px;
+      }
+      .offers_div div {
+        background-color: brown;
+        height: 197px;
+        width: 197px;
+      }
+      .cont_link {
+        display: flex;
+        justify-content: space-evenly;
+        width: 1349px;
+      }
+      .cont_link p {
+        height: 19px;
+        width: 166px;
+        background-color: rgba(255, 255, 255, 255);
+      }
+      .parent {
+        width: 1300px;
+        /* background-color: rgb(156, 102, 20); */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+        margin-left: 10px;
+      }
+      .child {
+        background-color: bisque;
+        width: 15%;
+        margin-left: 10px;
+        margin-right: 10px;
+        display: none;
+        /* height: 200px; */
+      }
+      .child img {
+        height: 250px;
+        width: 200px;
+      }
+      #left_arrow,
+      #right_arrow {
+        width: 3%;
+        display: inline-block;
+      }
+      #left_arrow button,
+      #right_arrow button {
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 15px;
+      }
+      .box {
+        display: flex;
+
+        width: 250px;
+        justify-content: center;
+      }
+      .txt {
+        font-size: 40px;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        color: #2f3337;
+      }
+      img {
+        margin-top: 10px;
+      }
+      .d1 {
+        margin-top: 30px;
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body onload="show()">
+    <header>
+      <div id="navbar_part1"></div>
+      <div id="nav_items">
+        <div class="d1">
+          <!-- logo -->
+          <div class="box">
+            <div>
+              <img
+                src="https://tse1.mm.bing.net/th?id=OIP.BnbXcHond7Yj-khtYhEHQQHaHa&pid=Api&P=0&w=30&h=30"
+              />
+            </div>
+            <div class="txt">overstock</div>
+            <span>&#174;</span>
+          </div>
+        </div>
+        <div class="d2">
+          <input type="text" id="input" />
+          <div id="search">
+            <img
+              src="https://img.icons8.com/material-outlined/30/ffffff/search--v1.png"
+            />
+          </div>
+        </div>
+        <div class="d3">
+          <div>
+            <img
+              style="margin-left: 2px"
+              src="https://img.icons8.com/windows/25/000000/guest-male--v1.png"
+            />
+            <div onclick="acounts_dropdown()">accounts</div>
+            <div class="menu"></div>
+          </div>
+          <div>
+            <img src="https://img.icons8.com/ios/25/000000/like--v1.png" />
+            <div>Lists</div>
+          </div>
+          <div>
+            <img
+              src="https://img.icons8.com/external-flatart-icons-solid-flatarticons/25/000000/external-cart-supermarket-flatart-icons-solid-flatarticons.png"
+            />
+            <div>Cart</div>
+          </div>
+          <!-- <button>
+            <img src="https://img.icons8.com/ios/15/000000/lock--v1.png" />Add
+            To Cart
+          </button> -->
+        </div>
+      </div>
+
+      <div id="categories">
+        <div>Furniture</div>
+        <div>Rugs</div>
+        <div>Decor</div>
+        <div>Bed&Bath</div>
+        <div>Home Improvement</div>
+        <div>Kitchen</div>
+        <div>Outdoor</div>
+        <div>Jewellery</div>
+        <div>Lighting</div>
+        <div>Kids & Baby</div>
+        <div>More</div>
+        <div id="vertical"></div>
+        <div>Holidays & Gifts</div>
+        <div style="color: #d23141">Sales & Gifts</div>
+      </div>
+    </header>
+    <!-- boddyyy -->
+
+    <div id="Container_home">
+      <img src="/source_folder/save_me.png" style="width: 1349px" />
+      <div class="offers_cont">
+        <h1>Limited-Time Deals</h1>
+      </div>
+      <div class="offers_div">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="cont_link">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+      </div>
+      <div class="offers_cont">
+        <h1>Limited-Time Deals</h1>
+      </div>
+      <div class="parent">
+        <div id="left_arrow" onclick="move_right()"><button>&lt;</button></div>
+        <div class="child" id="c1">
+          <img
+            src="https://tse3.mm.bing.net/th?id=OIP.Mxe6drGLv7hEQ7L22PoN1gHaHa&pid=Api&P=0"
+          />
+          <p>1</p>
+        </div>
+        <div class="child" id="c2">
+          <img
+            src="https://tse4.mm.bing.net/th?id=OIP.LYhzAGM2cWktDH_Hoav4lwHaHa&pid=Api&P=0"
+          />
+          <p>2</p>
+        </div>
+        <div class="child" id="c3">
+          <img
+            src="https://tse1.mm.bing.net/th?id=OIP.3IrG5yDRMz_49e2X53U3-QHaHz&pid=Api&P=0"
+          />
+          <p>3</p>
+        </div>
+        <div class="child" id="c4">
+          <img
+            src="https://tse4.mm.bing.net/th?id=OIP.SfxCw7a01zUZhJYNmXUtLQHaHa&pid=Api&P=0"
+          />
+          <p>4</p>
+        </div>
+        <div class="child" id="c5">
+          <img
+            src="https://tse1.mm.bing.net/th?id=OIP.MLDQ7wRmddQYfoOqZTfdAQHaF5&pid=Api&P=0"
+          />
+          <p>5</p>
+        </div>
+        <div class="child" id="c6">
+          <img
+            src="https://tse3.mm.bing.net/th?id=OIP.ebx_H3YfSlMHjCg3_S5u6AHaHa&pid=Api&P=0w=300&h=300"
+          />
+          <p>6</p>
+        </div>
+        <div class="child" id="c7">
+          <img
+            src="https://tse3.mm.bing.net/th?id=OIP.FWBrOj0gBvg2mNnGJmdiwAHaJQ&pid=Api&P=0&w=300&h=300"
+          />
+          <p>7</p>
+        </div>
+        <div class="child" id="c8">
+          <img
+            src="https://tse4.mm.bing.net/th?id=OIP.abhmO9xwMdGhMTfh3HPPGQHaJk&pid=Api&P=0&w=300&h=300"
+          />
+        </div>
+        <div class="child" id="c9">
+          <img
+            src="https://tse3.mm.bing.net/th?id=OIP.FCHldmjXJhRMkqDQw1aH_gHaE7&pid=Api&P=0&w=260&h=174"
+          />
+        </div>
+        <div class="child" id="c10">
+          <img
+            src="https://tse3.mm.bing.net/th?id=OIP.FCHldmjXJhRMkqDQw1aH_gHaE7&pid=Api&P=0&w=260&h=174"
+          />
+        </div>
+        <div id="right_arrow" onclick="move_left()"><button>&gt;</button></div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  var left = 1;
+  var right = 6;
+  function show() {
+    for (let i = left; i <= right; i++) {
+      document.getElementById("c" + i).style.display = "inline-block";
+      // console.log();
+    }
+  }
+  function move_left() {
+    if (left <= 3 && right <= 7) {
+      document.getElementById("c" + left).style.display = "none";
+      console.log("c" + left);
+      left += 1;
+      right += 1;
+      for (let i = left; i <= right; i++) {
+        document.getElementById("c" + i).style.display = "inline-block";
+        // console.log();}
+      }
+    } else {
+      return;
+    }
+  }
+  function move_right() {
+    if (left >= 2 && right >= 6) {
+      document.getElementById("c" + right).style.display = "none";
+      left -= 1;
+      right -= 1;
+      for (let i = left; i <= right; i++) {
+        document.getElementById("c" + i).style.display = "inline-block";
+        // console.log();}
+      }
+    } else {
+      return;
+    }
+  }
+  //dropdown
+  function acounts_dropdown() {
+    let ul = document.createElement("ul");
+    let signin = document.createElement("li");
+  }
+</script>
