@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+    <style>
+      #items_cart {
+        width: 1349px;
+        height: 800px;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .shoppingcart {
+        width: 930px;
+        height: 236px;
+        background-color: aquamarine;
+        border: 0.2px solid grey;
+      }
+      .payement {
+        width: 300px;
+        height: 160px;
+        background-color: rgb(171, 171, 224);
+        border: 0.2px solid grey;
+      }
+      .btn {
+        margin-left: 400px;
+        width: 120px;
+      }
+      .inner {
+        margin-left: 310px;
+      }
+      h4 {
+        margin-left: 330px;
+      }
+      .prize_me {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      .prize_me1 {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      .shop {
+        width: 280px;
+        margin-left: 10px;
+        height: 45px;
+        border-radius: 5px;
+        border: 0.2px solid grey;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <h1>Shopping Cart</h1>
+    <div id="items_cart">
+      <div class="shoppingcart">
+        <h1>You shopping cart is empty</h1>
+        <p class="inner">Started a cart already?Sign in to get your items</p>
+        <button class="btn">Sign In</button>
+        <h4>New to overstock?<a href="#">Create an account</a></h4>
+      </div>
+      <div class="payement">
+        <div class="prize_me">
+          <p>(0)Item</p>
+          <p>Inr:0.00</p>
+        </div>
+        <div class="prize_me1">
+          <p style="font-weight: bolder">Your Total</p>
+          <p style="font-weight: bolder">Inr:0.00</p>
+        </div>
+        <button class="shop">continue Shopping</button>
+      </div>
+    </div>
+  </body>
+</html>
+<script type="module">
+  import navbar from "/components/navbar.js";
+  let header = document.querySelector("header");
+  header.innerHTML = navbar();
+</script>
+<script>
+  var data1 = JSON.parse(localStorage.getItem("items_buy"));
+  //   console.log(data1);
+  function data_show(data1) {
+    let div = document.querySelector("shoppingcart");
+    data1.forEach(({ image, desc, prize, id }) => {
+      if (data1.length > 0) {
+      }
+    });
+  }
+  data_show(data1);
+</script>

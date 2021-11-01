@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider</title>
+    <style>
+      .parent {
+        width: 1349px;
+        /* background-color: rgb(156, 102, 20); */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+      }
+      .child {
+        background-color: bisque;
+        width: 15%;
+        margin-left: 10px;
+        margin-right: 10px;
+        display: none;
+        /* height: 200px; */
+      }
+      .child img {
+        height: 180px;
+        width: 100%;
+      }
+      #left_arrow,
+      #right_arrow {
+        margin: 12px;
+        width: 3%;
+        display: inline-block;
+      }
+      #left_arrow button,
+      #right_arrow button {
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 15px;
+      }
+    </style>
+  </head>
+  <body onload="show()">
+    <div class="parent">
+      <div id="left_arrow" onclick="move_right()"><button>&lt;</button></div>
+      <div class="child" id="c1">
+        <img
+          src="https://tse3.mm.bing.net/th?id=OIP.FCHldmjXJhRMkqDQw1aH_gHaE7&pid=Api&P=0&w=260&h=174"
+        />
+        <p>1</p>
+      </div>
+      <div class="child" id="c2">
+        <img
+          src="https://tse3.mm.bing.net/th?id=OIP.FCHldmjXJhRMkqDQw1aH_gHaE7&pid=Api&P=0&w=260&h=174"
+        />
+        <p>2</p>
+      </div>
+      <div class="child" id="c3">
+        <img
+          src="https://tse3.mm.bing.net/th?id=OIP.FCHldmjXJhRMkqDQw1aH_gHaE7&pid=Api&P=0&w=260&h=174"
+        />
+        <p>3</p>
+      </div>
+      <div class="child" id="c4">
+        <img
+          src="https://tse3.mm.bing.net/th?id=OIP.FCHldmjXJhRMkqDQw1aH_gHaE7&pid=Api&P=0&w=260&h=174"
+        />
+        <p>4</p>
+      </div>
+      <div class="child" id="c5">
+        <img
+          src="https://tse3.mm.bing.net/th?id=OIP.FCHldmjXJhRMkqDQw1aH_gHaE7&pid=Api&P=0&w=260&h=174"
+        />
+        <p>5</p>
+      </div>
+      <div class="child" id="c6">
+        <img
+          src="https://tse3.mm.bing.net/th?id=OIP.FCHldmjXJhRMkqDQw1aH_gHaE7&pid=Api&P=0&w=260&h=174"
+        />
+        <p>6</p>
+      </div>
+      <div class="child" id="c7">
+        <img
+          src="https://tse3.mm.bing.net/th?id=OIP.FCHldmjXJhRMkqDQw1aH_gHaE7&pid=Api&P=0&w=260&h=174"
+        />
+        <p>7</p>
+      </div>
+      <div class="child" id="c8">
+        <img
+          src="https://tse3.mm.bing.net/th?id=OIP.FCHldmjXJhRMkqDQw1aH_gHaE7&pid=Api&P=0&w=260&h=174"
+        />
+      </div>
+      <div class="child" id="c9">
+        <img
+          src="https://tse3.mm.bing.net/th?id=OIP.FCHldmjXJhRMkqDQw1aH_gHaE7&pid=Api&P=0&w=260&h=174"
+        />
+      </div>
+      <div class="child" id="c10">
+        <img
+          src="https://tse3.mm.bing.net/th?id=OIP.FCHldmjXJhRMkqDQw1aH_gHaE7&pid=Api&P=0&w=260&h=174"
+        />
+      </div>
+      <div id="right_arrow" onclick="move_left()"><button>&gt;</button></div>
+    </div>
+  </body>
+  <script>
+    var left = 1;
+    var right = 6;
+    function show() {
+      for (let i = left; i <= right; i++) {
+        document.getElementById("c" + i).style.display = "inline-block";
+        // console.log();
+      }
+    }
+    function move_left() {
+      if (left <= 3 && right <= 7) {
+        document.getElementById("c" + left).style.display = "none";
+        console.log("c" + left);
+        left += 1;
+        right += 1;
+        for (let i = left; i <= right; i++) {
+          document.getElementById("c" + i).style.display = "inline-block";
+          // console.log();}
+        }
+      } else {
+        return;
+      }
+    }
+    function move_right() {
+      if (left >= 2 && right >= 6) {
+        document.getElementById("c" + right).style.display = "none";
+        left -= 1;
+        right -= 1;
+        for (let i = left; i <= right; i++) {
+          document.getElementById("c" + i).style.display = "inline-block";
+          // console.log();}
+        }
+      } else {
+        return;
+      }
+    }
+  </script>
+</html>
