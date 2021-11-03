@@ -54,6 +54,42 @@
         border-radius: 5px;
         border: 0.2px solid grey;
       }
+      .item {
+        width: 900px;
+        height: 700px;
+        background-color: aquamarine;
+      }
+      .items {
+        width: 890px;
+        height: 236px;
+        background-color: rgb(14, 37, 30);
+        border: 0.2px solid grey;
+        display: flex;
+      }
+      .items .img {
+        height: 236px;
+        width: 236px;
+      }
+
+      .items .prod_detail {
+        width: 350px;
+        height: 236px;
+
+        background-color: blue;
+        padding-left: 10px;
+        color: white;
+      }
+      .items .click {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        width: 180px;
+        font-size: 18px;
+      }
+
+      .close {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -66,6 +102,9 @@
         <button class="btn">Sign In</button>
         <h4>New to overstock?<a href="#">Create an account</a></h4>
       </div>
+      <div class="item close"></div>
+      <!-- </div>
+      </div> -->
       <div class="payement">
         <div class="prize_me">
           <p>(0)Item</p>
@@ -86,14 +125,115 @@
   header.innerHTML = navbar();
 </script>
 <script>
-  var data1 = JSON.parse(localStorage.getItem("items_buy"));
-  //   console.log(data1);
+  let data1 = JSON.parse(localStorage.getItem("items_buy"));
+  if (data1.length !== 0) {
+    var shoppingCart = document.querySelector(".shoppingcart");
+    shoppingCart.classList.add("close");
+    var item = document.querySelector(".item");
+    item.classList.remove("close");
+  } else {
+    var shoppingCart = document.querySelector(".shoppingcart");
+    shoppingCart.classList.remove("close");
+    var item = document.querySelector(".item");
+    item.classList.add("close");
+  }
+
+  // console.log(data1.id);
+
   function data_show(data1) {
-    let div = document.querySelector("shoppingcart");
-    data1.forEach(({ image, desc, prize, id }) => {
+    let item = document.querySelector(".item");
+    // let i = 1;
+    // console.log(item);
+    let i = 1;
+    data1.forEach(({ image, desc, prize, id, flag }) => {
+      // console.log(prize);
+      let items = document.createElement("div");
+      items.className = "items";
       if (data1.length > 0) {
+        //items
+        //imgdiv
+        let div2 = document.createElement("div");
+        div2.className = "img";
+        let img = document.createElement("img");
+        img.src = image;
+        img.style.width = "225px";
+        div2.append(img);
+        // items.append(div2);
+        // item.append(items);
+
+        // prod_div;
+        let div3 = document.createElement("div");
+        div3.className = "prod_detail";
+        let heading_p = document.createElement("p");
+        heading_p.innerText = desc;
+        let prize_p = document.createElement("p");
+        prize_p.className = "prize";
+        let pri = prize.substring(6);
+        //dollor to rupees
+        prize_p.innerText = `INR ${money_conversion(pri)}`;
+        let rating = document.createElement("p");
+        //rating
+        rating.innerText = `${Math.floor(
+          Math.random() * 2000
+        )} Customers Liked the product`;
+        //dropdown
+        let sel = document.createElement("select");
+        sel.setAttribute("class", "selectme" + i);
+        // console.log(sel);
+
+        // console.log(sel);
+
+        let op = document.createElement("option");
+        op.value = 1;
+        op.innerText = 1;
+        let op1 = document.createElement("option");
+        op1.value = 2;
+        op1.innerText = 2;
+        let op2 = document.createElement("option");
+        op2.value = 3;
+        op2.innerText = 3;
+        sel.append(op, op1, op2);
+
+        sel.onchange = function () {
+          // console.log("chaneg");
+          let x = document.querySelector(".selectme2");
+          console.log(x.value);
+
+          // console.log(prize_p);
+        };
+
+        // while (i <= 3) {
+        //   let op = document.createElement("option");
+        //   op.value = i;
+        //   op.innerText = i;
+        //   i++;
+        //   sel.append(op);
+        // }
+
+        let div4 = document.createElement("div");
+        div4.className = "click";
+        let remove = document.createElement("a");
+        remove.className = "remove";
+        remove.innerText = "Remove";
+        let save_later = document.createElement("a");
+        save_later.className = "savelater";
+        save_later.innerText = "Save for Later";
+        div4.append(remove, save_later);
+        div3.append(heading_p, prize_p, rating, sel, div4);
+        items.append(div2, div3);
+        // console.log(items);
+        // console.log(items);
+        item.append(items);
       }
+      i++;
     });
   }
+
+  function money_conversion(m) {
+    let dollor = 74.78;
+    let calc = dollor * +m;
+    return calc;
+  }
+
   data_show(data1);
 </script>

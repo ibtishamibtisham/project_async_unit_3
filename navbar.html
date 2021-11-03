@@ -114,13 +114,15 @@
         "https://tse3.mm.bing.net/th?id=OIP.Mxe6drGLv7hEQ7L22PoN1gHaHa&pid=Api&P=0",
       dec: "Mar-ceilo 3-piece chrismas quilt set BedSpread Set ",
       prize: "Sale:$65.00",
+      flag: "true",
     },
     {
       id: 2,
       image:
         " https://tse4.mm.bing.net/th?id=OIP.LYhzAGM2cWktDH_Hoav4lwHaHa&pid=Api&P=0  ",
       dec: "Tis the Season 3-pc Coverlet bedding set",
-      prize: "Sale:$90-97.00",
+      prize: "Sale:$90.00",
+      flag: "true",
     },
     {
       id: 3,
@@ -128,6 +130,7 @@
         " https://tse1.mm.bing.net/th?id=OIP.3IrG5yDRMz_49e2X53U3-QHaHz&pid=Api&P=0 ",
       dec: "Plaid Patchwork christmas quilt Beadspread Set",
       prize: "Sale:$100.24",
+      flag: "true",
     },
     {
       id: 4,
@@ -135,6 +138,7 @@
         "https://tse2.mm.bing.net/th?id=OIP.pYO8bxunecnj0FwHXoNLUAHaHa&pid=Api&P=0",
       dec: "Cozy Line RoseMond 3-piece Floral Patchwork  Bedsheets",
       prize: "Sale:$76.00",
+      flag: "true",
     },
     {
       id: 5,
@@ -142,6 +146,7 @@
         "https://tse1.mm.bing.net/th?id=OIP.MLDQ7wRmddQYfoOqZTfdAQHaF5&pid=Api&P=0 ",
       dec: "Christmas 3-pc king coverlet Donna Sharp Quilt Set",
       prize: "Sale:$20.75",
+      flag: "true",
     },
     {
       id: 6,
@@ -149,6 +154,7 @@
         "https://tse3.mm.bing.net/th?id=OIP.ebx_H3YfSlMHjCg3_S5u6AHaHa&pid=Api&P=0",
       dec: "Cozy comfy 3-piece king size bedspread",
       prize: "Sale:$55",
+      flag: "true",
     },
     {
       id: 7,
@@ -156,20 +162,23 @@
         "https://tse4.mm.bing.net/th?id=OIP.abhmO9xwMdGhMTfh3HPPGQHaJk&pid=Api&P=0",
       dec: "Carbon lloft Allain 3-piece Reversible Quilt Set",
       prize: "Sale:$70",
+      flag: "true",
     },
     {
       id: 8,
       image:
         "https://tse3.mm.bing.net/th?id=OIP.FCHldmjXJhRMkqDQw1aH_gHaE7&pid=Api&P=0",
       dec: "Christmas special bedSpread with pillow cover",
-      prize: "Sale:$30-49",
+      prize: "Sale:$30.98",
+      flag: "true",
     },
     {
       id: 9,
       image:
         "https://tse3.mm.bing.net/th?id=OIP.n3FyQsKBZEp2E4MfMOLbGwHaHa&pid=Api&P=0",
       dec: "Crazy halloween christmas new year ",
-      prize: "Sale:$86",
+      prize: "Sale:$89",
+      flag: "true",
     },
     {
       id: 10,
@@ -177,43 +186,66 @@
         "https://tse3.mm.bing.net/th?id=OIP.n3FyQsKBZEp2E4MfMOLbGwHaHa&pid=Api&P=0",
       dec: "Crazy halloween christmas new year ",
       prize: "Sale:$86",
+      flag: "true",
     },
   ];
   localStorage.setItem("user", JSON.stringify(data));
   let data1 = JSON.parse(localStorage.getItem("user"));
   var i = 1;
+
   function data_append(data) {
-    let arr = [];
-    data.forEach(({ image, prize, dec, id }) => {
-      // console.log(image);
+    data.forEach((d) => {
+      // console.log(image);l
+
+      let l = d.id;
       let div1 = document.getElementById("c" + i);
 
       let img = document.createElement("img");
-      img.src = image;
+      img.src = d.image;
       img.style.border = ".2px solid grey";
       let p = document.createElement("h3");
-      p.innerText = prize;
+      p.innerText = d.prize;
       let p1 = document.createElement("div");
-      p1.innerText = dec;
+      p1.innerText = d.dec;
       p1.style.color = "rgb(47, 51, 55)";
       p.style.marginBottom = "5px";
       p.style.color = "Red";
       let div2 = document.createElement("div");
       div2.append(p, p1);
       div1.append(img, div2);
-      div1.addEventListener("click", function () {
-        arr.push({ image: image, price: prize, desc: dec, id: id });
-        //items onclick on div set to localstorage
-        localStorage.setItem("items_buy", JSON.stringify(arr));
+      div1.addEventListener("click", () => {
+        cart(d);
       });
-
       i++;
     });
   }
   data_append(data1);
+
+  if (localStorage.getItem("items_buy") === null) {
+    localStorage.setItem("items_buy", JSON.stringify([]));
+  }
+
+  function cart(d) {
+    var cartData = JSON.parse(localStorage.getItem("items_buy"));
+
+    var flag = true;
+    for (let k = 0; k < cartData.length; k++) {
+      if (d.id === cartData[k].id) {
+        flag = false;
+        break;
+      }
+    }
+
+    if (flag) {
+      cartData.push(d);
+    }
+
+    localStorage.setItem("items_buy", JSON.stringify(cartData));
+  }
 </script>
 <script type="module">
   import navbar from "/components/navbar.js";
   let header = document.querySelector("header");
   header.innerHTML = navbar();
 </script>
+<script></script>
