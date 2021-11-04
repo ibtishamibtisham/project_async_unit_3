@@ -139,7 +139,7 @@
   }
 
   // console.log(data1.id);
-
+  var prizeArr = [];
   function data_show(data1) {
     let item = document.querySelector(".item");
     // let i = 1;
@@ -167,10 +167,12 @@
         let heading_p = document.createElement("p");
         heading_p.innerText = desc;
         let prize_p = document.createElement("p");
-        prize_p.className = "prize";
+        prize_p.id = `prize${i}`;
         let pri = prize.substring(6);
         //dollor to rupees
         prize_p.innerText = `INR ${money_conversion(pri)}`;
+        var prizeNumber = prize_p.innerText.split(" ");
+        prizeArr.push(Number(prizeNumber[1]));
         let rating = document.createElement("p");
         //rating
         rating.innerText = `${Math.floor(
@@ -178,10 +180,7 @@
         )} Customers Liked the product`;
         //dropdown
         let sel = document.createElement("select");
-        sel.setAttribute("class", "selectme" + i);
-        // console.log(sel);
-
-        // console.log(sel);
+        sel.setAttribute("id", "selectme" + i);
 
         let op = document.createElement("option");
         op.value = 1;
@@ -193,22 +192,6 @@
         op2.value = 3;
         op2.innerText = 3;
         sel.append(op, op1, op2);
-
-        sel.onchange = function () {
-          // console.log("chaneg");
-          let x = document.querySelector(".selectme2");
-          console.log(x.value);
-
-          // console.log(prize_p);
-        };
-
-        // while (i <= 3) {
-        //   let op = document.createElement("option");
-        //   op.value = i;
-        //   op.innerText = i;
-        //   i++;
-        //   sel.append(op);
-        // }
 
         let div4 = document.createElement("div");
         div4.className = "click";
@@ -236,4 +219,17 @@
   }
 
   data_show(data1);
+
+  function selectDropDown() {
+    var select = document.querySelectorAll("select");
+    for (let i = 0; i < select.length; i++) {
+      select[i].onchange = () => {
+        var x = document.getElementById(`selectme${i + 1}`);
+        var prize = document.getElementById(`prize${i + 1}`);
+        prize.textContent = `INR ${Number(x.value) * prizeArr[i]}`;
+      };
+    }
+  }
+
+  selectDropDown();
 </script>
