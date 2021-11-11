@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/overstock/styles/style.css" />
+    <link rel="stylesheet" href="/overstock/styles/cart.css" />
+    <!-- overstock\styles\cart.css -->
+  </head>
+  <body>
+    <header></header>
+    <h1>Shopping Cart</h1>
+    <div id="items_cart">
+      <div class="shoppingcart">
+        <h1>You shopping cart is empty</h1>
+        <p class="inner">Started a cart already?Sign in to get your items</p>
+        <button class="btn">Sign In</button>
+        <h4>New to overstock?<a href="#">Create an account</a></h4>
+      </div>
+      <div class="item close"></div>
+      <!-- </div>
+      </div> -->
+      <div class="payement">
+        <div class="prize_me">
+          <p class="count1">(0)Item</p>
+          <p class="price_on">INR:0.00</p>
+        </div>
+        <div class="coupon" style="text-align: center">
+          <p onclick="coupon()" style="margin: 0">
+            10% discount on first purchase
+          </p>
+        </div>
+        <div
+          class="discount"
+          style="margin-left: 20px; color: red; display: none"
+        >
+          yay!10% discount on your first purchase
+        </div>
+        <div class="prize_me1">
+          <p style="font-weight: bolder">Your Total</p>
+          <p class="reflect_price" style="font-weight: bolder">INR:0.00</p>
+        </div>
+        <button class="shop" onclick="checkout()">Checkout</button>
+      </div>
+    </div>
+  </body>
+</html>
+<script type="module">
+  import { navbar, savelater } from "/overstock/components/navbar.js";
+  import {
+    selectDropDown,
+    item_count,
+  } from "/overstock/categories/scripts/cart.js";
+  selectDropDown();
+  item_count();
+
+  let header = document.querySelector("header");
+  header.innerHTML = navbar();
+  let item = document.querySelector(".hello");
+  item.addEventListener("click", savelater);
+</script>
+<script>
+  let data1 = JSON.parse(localStorage.getItem("items_buy"));
+  if (data1.length !== 0) {
+    var shoppingCart = document.querySelector(".shoppingcart");
+    shoppingCart.classList.add("close");
+    var item = document.querySelector(".item");
+    item.classList.remove("close");
+  } else {
+    var shoppingCart = document.querySelector(".shoppingcart");
+    shoppingCart.classList.remove("close");
+    var item = document.querySelector(".item");
+    item.classList.add("close");
+  }
+  let count_prod = [];
+  // console.log(data1.id);
+  var prizeArr = [];
+  let arr1 = [];
+  let savelater = [];
+
+  function data_show(data1) {
+    let item = document.querySelector(".item");
+    let i = 1;
+    data1.forEach(({ image, dec, prize, id, flag }, index) => {
+      // console.log(prize);
+      let items = document.createElement("div");
+      items.className = "items";
+      if (data1.length > 0) {
+        //items
+        //imgdiv
+        let div2 = document.createElement("div");
+        div2.className = "img";
+        let img = document.createElement("img");
+        img.src = image;
+        img.style.width = "225px";
+        div2.append(img);
+        // items.append(div2);
+        // item.append(items);
+
+        // prod_div;
+        let div3 = document.createElement("div");
+        div3.className = "prod_detail";
+        let heading_p = document.createElement("p");
+        heading_p.innerText = dec;
+        let prize_p = document.createElement("p");
+        prize_p.id = `prize${i}`;
+        let pri = prize.substring(6);
+        //dollor to rupees
+        prize_p.innerText = `INR ${money_conversion(pri)}`;
+        var prizeNumber = prize_p.innerText.split(" ");
+        arr1.push(prizeNumber[1]);
+        count_prod.push(1);
+        let count2 = document.querySelector(".count1");
+
+        prizeArr.push(Number(prizeNumber[1]));
+        let rating = document.createElement("p");
+        //rating
+        rating.innerText = `${Math.floor(
+          Math.random() * 2000
+        )} Customers Liked the product`;
+        //dropdown
+        let sel = document.createElement("select");
+        sel.setAttribute("id", "selectme" + i);
+        let op = document.createElement("option");
+        op.value = 1;
+        op.innerText = 1;
+        let op1 = document.createElement("option");
+        op1.value = 2;
+        op1.innerText = 2;
+        let op2 = document.createElement("option");
+        op2.value = 3;
+        op2.innerText = 3;
+        sel.append(op, op1, op2);
+        let div4 = document.createElement("div");
+        div4.className = "click";
+        let remove = document.createElement("a");
+        remove.className = "remove";
+        remove.id = index;
+        // console.log(index);
+
+        remove.innerText = "Remove";
+        // let it1 = document.querySelector(".remove");
+        remove.addEventListener("click", (e) => {
+          var index1 = e.target.id;
+
+          arr1[index1] = 0;
+          count_prod[index1] = 0;
+          item_count();
+
+          let item = document.querySelector(".items");
+          item.remove();
+        });
+        let save_later = document.createElement("a");
+        save_later.className = "savelater";
+        save_later.innerText = "Save for Later";
+        //save later products
+        save_later.addEventListener("click", () => {
+          savelater.push({ image, prize, dec });
+
+          localStorage.setItem("items_later", JSON.stringify(savelater));
+          console.log(savelater);
+        });
+        div4.append(remove, save_later);
+        div3.append(heading_p, prize_p, rating, sel, div4);
+        items.append(div2, div3);
+        // console.log(items);
+        // console.log(items);
+        item.append(items);
+        //item count
+      }
+      i++;
+    });
+  }
+  function money_conversion(m) {
+    let dollor = 74.78;
+    let calc = dollor * +m;
+    return calc;
+  }
+
+  data_show(data1);
+
+  let flag = true;
+  function coupon() {
+    let count3 = document.querySelector(".price_on").innerText;
+    let price_arr = count3.split(" ");
+
+    if (Number(price_arr[1]) <= 0) {
+      const par = document.querySelector(".coupon p");
+      par.innerText = "Please add items to cart";
+    } else if (flag && Number(price_arr[1]) > 0) {
+      var discount = Number(price_arr[1]) - Number(price_arr[1]) * 0.1;
+      let prize_show1 = document.querySelector(".reflect_price");
+      prize_show1.innerText = `INR ${discount.toFixed(2)}`;
+      const par = document.querySelector(".coupon p");
+      par.style.textDecoration = "line-through";
+      flag = false;
+    } else {
+      const par = document.querySelector(".coupon ");
+      par.style.display = "none";
+    }
+  }
+  //checkout
+  function checkout() {
+    window.location.href = "navbar.html";
+    localStorage.removeItem("items_buy");
+  }
+</script>

@@ -1,0 +1,187 @@
+{
+  "rugs1": [
+    {
+      "dec": "Floor rug maroon",
+      "image": "https://tse4.mm.bing.net/th?id=OIP.foR5eyVn5_H-5NW2_zm0AAHaHa&pid=Api&P=0&w=300&h=300",
+      "prize": "Only:$15.00",
+      "id": 1
+    },
+    {
+      "dec": "Furry rugs",
+      "image": "https://tse3.mm.bing.net/th?id=OIP.IOPXu1y9seDSLmh05yhdyAHaHa&pid=Api&P=0&w=300&h=300",
+      "description": "this is",
+      "prize": "Only:$23.00",
+      "id": 2
+    },
+    {
+      "dec": "furry rugs",
+      "image": "https://tse4.mm.bing.net/th?id=OIP.5ekPtJxbvtXrhS19tlpR8QHaHa&pid=Api&P=0&w=300&h=300",
+      "description": "this is",
+      "prize": "Only:33.00",
+      "id": 3
+    },
+    {
+      "dec": "Grey and white furry rug",
+      "image": "https://tse2.mm.bing.net/th?id=OIP.P11odjnO3xN09ayPrh4HXQHaHa&pid=Api&P=0&w=300&h=300",
+      "description": "this is",
+      "prize": "Only:$25",
+      "id": 4
+    },
+    {
+      "dec": "Round foor rug for balcony",
+      "image": "https://tse3.mm.bing.net/th?id=OIP.YuF6bMxCwcPSADyfohJYjgHaHa&pid=Api&P=0&w=300&h=300",
+      "description": "this is",
+      "prize": "Only:$12.00",
+      "id": 5
+    },
+    {
+      "dec": "Multicolor Rug",
+      "image": "https://tse2.mm.bing.net/th?id=OIP.uXUfIf6lleWUeiEUOio_HwHaHa&pid=Api&P=0&w=300&h=300",
+      "description": "this is",
+      "prize": "Only:17.00",
+      "id": 6
+    },
+    {
+      "dec": "Furry blue Rug",
+      "image": "https://tse4.mm.bing.net/th?id=OIP.TS4MLp_81UFqiVLXhOkhcQHaHa&pid=Api&P=0&w=300&h=300",
+      "description": "this is",
+      "prize": "Only:$7.00",
+      "id": 7
+    },
+    {
+      "dec": "Multicolor Rug",
+      "image": "https://tse1.mm.bing.net/th?id=OIP.reilTdM-IS6UaCXPiGxyCQHaHa&pid=Api&P=0&w=300&h=300",
+      "description": "this is ",
+      "prize": "Only:$5.00",
+      "id": 8
+    }
+  ],
+  "decoration": [
+    {
+      "dec": "plant pot",
+      "image": "https://tse2.mm.bing.net/th?id=OIP.-VuLOMPEPycdf0liTwI8bAHaHa&pid=Api&P=0&w=300&h=300",
+      "description": "this is",
+      "prize": "Only:$2.00",
+      "id": 1
+    },
+    {
+      "dec": "mirror",
+      "image": "https://tse2.mm.bing.net/th?id=OIP.nWJc20lUes8pqUNOU-_KXQHaHa&pid=Api&P=0&w=300&h=300",
+      "description": "this is",
+      "prize": "Only:$45.00",
+      "id": 2
+    },
+    {
+      "dec": "Wall hanging",
+      "image": "https://tse2.mm.bing.net/th?id=OIP.GudxE2b0x2AoEQPOCyoBFAHaHT&pid=Api&P=0&w=300&h=300",
+      "description": "this is",
+      "prize": "Only:$9",
+      "id": 3
+    },
+    {
+      "dec": "Round Matka pot",
+      "image": "https://tse4.mm.bing.net/th?id=OIP.YRTZy_qh483Yj_grEsPO5wHaHa&pid=Api&P=0&w=300&h=300",
+      "description": "this is",
+      "prize": "Only:$8.00",
+      "id": 4
+    },
+    {
+      "dec": "Wall hanging",
+      "image": "https://tse1.mm.bing.net/th?id=OIP.9AIRMRVv9aYoVw4EXOQJaQHaHa&pid=Api&P=0&w=300&h=300",
+      "description": "this is",
+      "prize": "Only:$12.00",
+      "id": 5
+    },
+    {
+      "dec": "Swing nest chair",
+      "image": "https://tse2.mm.bing.net/th?id=OIP.fzpZwXbE9Z9XKpHru_QQWAHaHa&pid=Api&P=0&w=300&h=300",
+      "description": "this is",
+      "prize": "Only:$40.00",
+      "id": 6
+    },
+    {
+      "dec": "artificial decorative wall hangings",
+      "image": "https://tse1.mm.bing.net/th?id=OIP.23b0GHm2Ao47crr_IIfOVwHaHa&pid=Api&P=0&w=300&h=300",
+      "description": "Colorfull suitcase shape wall racks",
+      "prize": "Only:$18.00",
+      "id": 9
+    },
+    {
+      "dec": "Wall hanging",
+      "image": "https://tse3.mm.bing.net/th?id=OIP.nLorqA8HVgYQMaTwwkakTQHaHA&pid=Api&P=0&w=300&h=300",
+      "description": "Beautiful yellow sunflower for wall",
+      "prize": "Only:$2",
+      "id": 8
+    }
+  ],
+  "jwellery":[{
+     "dec": "Neck Piece",
+      "image": "https://tse4.mm.bing.net/th?id=OIP.maQHt9cGE7YS43HtVxQ7ewHaH_&pid=Api&P=0&w=300&h=300",
+      "prize": "Only:$50",
+      "id": 1
+  },
+  {
+     "dec": "Finger Ring",
+      "image": "https://tse2.mm.bing.net/th?id=OIP.uukYXPTM2FYqbtsZhsZClQHaHa&pid=Api&P=0&w=300&h=300",
+      "prize": "Only:$20",
+      "id": 2
+  },
+   {
+     "dec": "Ear Ring",
+      "image": "https://tse1.mm.bing.net/th?id=OIP.1_MKzzv9LuQ63RaqiTykbgHaHa&pid=Api&P=0&w=300&h=300",
+      "prize": "Only:$10",
+      "id": 3
+  },
+  {
+     "dec": "Anklet",
+      "image": "https://tse4.mm.bing.net/th?id=OIP.LkRbarCFmICTCmhpsx20SwHaHa&pid=Api&P=0&w=300&h=300",
+      "prize": "Only:$12",
+      "id": 4
+  },
+   {
+     "dec": "Head Ornaments ",
+      "image": "https://tse2.mm.bing.net/th?id=OIP.OyzJQbIUWOqfWGo1MdCLJQHaHQ&pid=Api&P=0&w=300&h=300",
+      "prize": "Only:$52",
+      "id": 5
+  },
+  {
+     "dec": "Septum Ring ",
+      "image": "https://tse3.mm.bing.net/th?id=OIP.i8lu8xwKjPQ2bLeq4GhIJgHaHs&pid=Api&P=0&w=300&h=300",
+      "prize": "Only:$52",
+      "id": 6
+  },
+   {
+     "dec": "Pearl Earings",
+      "image": "https://tse3.explicit.bing.net/th?id=OIP.H76wRDf5KAOpz2FdTPrR-QHaHa&pid=Api&P=0&w=300&h=300",
+      "prize": "Only:$30",
+      "id": 7
+  },
+   {
+     "dec": "Earings Set",
+      "image": "https://tse1.mm.bing.net/th?id=OIP.IHMjuGf--oGUkp8LsrdMOAHaJQ&pid=Api&P=0&w=300&h=300",
+      "prize": "Only:$30",
+      "id": 8
+  }
+],
+  "register": [
+    {
+      "Email": "shaguftamansuri987@gmail.com",
+      "Password": "1234567",
+      "c_pwd": "1234567",
+      "id": 1
+    },
+    {
+      "Email": "judsondpak07@gmail.com",
+      "Password": "1234",
+      "c_pwd": "1234",
+      "id": 2
+    },
+    {
+      "Email": "hello@gmail.com",
+      "Password": "11",
+      "c_pwd": "11",
+      "id": 3
+    }
+  
+  ]
+}

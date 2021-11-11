@@ -30,9 +30,9 @@ function navbar() {
             />
             <div onclick="acounts_dropdown()">accounts</div>
           </div>
-          <div>
+          <div class="hello">
             <img src="https://img.icons8.com/ios/25/000000/like--v1.png" />
-            <div>Lists</div>
+            <div >Lists</div>
           </div>
           <div>
             <img
@@ -68,4 +68,7 @@ function navbar() {
       </div>
    `;
 }
-export default navbar;
+function savelater() {
+  window.location.href = "saveLater.html";
+}
+export { navbar, savelater };

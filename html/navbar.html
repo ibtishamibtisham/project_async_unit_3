@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/overstock/styles\style.css" />
+  </head>
+  <body onload="show()">
+    <header></header>
+    <!-- boddyyy -->
+
+    <div id="Container_home">
+      <img src="/source_folder/save_me.png" style="width: 1349px" />
+      <div class="offers_cont">
+        <h1>Limited-Time Deals</h1>
+      </div>
+      <div class="offers_div">
+        <div
+          class="bk1"
+          style="
+            background-image: url(https://tse4.mm.bing.net/th?id=OIP.lzG7WVJRyUf6N6SkgQXr_AHaHa&pid=Api&P=0&w=197&h=197);
+          "
+        ></div>
+
+        <div
+          class="bk2"
+          style="
+            background-image: url(https://tse2.mm.bing.net/th?id=OIP.ZBnhtvDta5A6sJMptawqaQHaGM&pid=Api&P=0&w=189&h=159);
+          "
+        ></div>
+
+        <div
+          class="bk3"
+          style="
+            background-image: url(https://tse2.mm.bing.net/th?id=OIP.9PJ967Q862HBY6v92_vD9wHaHa&pid=Api&P=0&w=300&h=300);
+            background-repeat: no-repeat;
+            background-size: cover;
+          "
+        ></div>
+        <div
+          class="bk4"
+          style="
+            background-image: url(https://tse1.mm.bing.net/th?id=OIP._2UuBxfRB95X7IUGEpLOtgHaHa&pid=Api&P=0&w=200&h=200);
+          "
+        ></div>
+
+        <div
+          class="bk5"
+          style="
+            background-image: url(https://tse4.mm.bing.net/th?id=OIP.jBKD4JTxzQtnMuMJrCoQcQHaEi&pid=Api&P=0&w=200&h=200);
+            background-repeat: no-repeat;
+            background-size: cover;
+          "
+        ></div>
+
+        <div
+          class="bk6"
+          style="
+            background-image: url(https://tse1.mm.bing.net/th?id=OIP.5-vnQKjXfSK8XSJNfmHYygHaGQ&pid=Api&P=0&w=200&h=350);
+            background-repeat: no-repeat;
+            background-size: cover;
+          "
+        ></div>
+      </div>
+      <div class="cont_link">
+        <p>Rugs</p>
+        <p>Select Living Room Furniture</p>
+        <p>Select Lighting and decoration</p>
+        <p>Jwellery</p>
+        <p>Select Home Decor</p>
+        <p>Select Beds</p>
+      </div>
+      <div class="offers_cont">
+        <h1>Limited-Time Deals</h1>
+      </div>
+      <div class="parent">
+        <div id="left_arrow" onclick="move_right()"><button>&lt;</button></div>
+        <div class="child" id="c1"></div>
+        <div class="child" id="c2"></div>
+        <div class="child" id="c3"></div>
+        <div class="child" id="c4"></div>
+        <div class="child" id="c5"></div>
+        <div class="child" id="c6"></div>
+        <div class="child" id="c7"></div>
+        <div class="child" id="c8"></div>
+        <div class="child" id="c9"></div>
+        <div class="child" id="c10"></div>
+        <div class="child" id="c11"></div>
+        <div id="right_arrow" onclick="move_left()"><button>&gt;</button></div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  var left = 1;
+  var right = 6;
+  function show() {
+    for (let i = left; i <= right; i++) {
+      document.getElementById("c" + i).style.display = "inline-block";
+      // console.log();
+    }
+  }
+  function move_left() {
+    if (left <= 3 && right <= 7) {
+      document.getElementById("c" + left).style.display = "none";
+      console.log("c" + left);
+      left += 1;
+      right += 1;
+      for (let i = left; i <= right; i++) {
+        document.getElementById("c" + i).style.display = "inline-block";
+        // console.log();}
+      }
+    } else {
+      return;
+    }
+  }
+  function move_right() {
+    if (left >= 2 && right >= 6) {
+      document.getElementById("c" + right).style.display = "none";
+      left -= 1;
+      right -= 1;
+      for (let i = left; i <= right; i++) {
+        document.getElementById("c" + i).style.display = "inline-block";
+        // console.log();}
+      }
+    } else {
+      return;
+    }
+  }
+  //dropdown
+  function acounts_dropdown() {
+    let ul = document.createElement("ul");
+    let signin = document.createElement("li");
+  }
+
+  //dATA append
+
+  let data = [
+    {
+      id: 1,
+      image:
+        "https://tse3.mm.bing.net/th?id=OIP.Mxe6drGLv7hEQ7L22PoN1gHaHa&pid=Api&P=0",
+      dec: "Mar-ceilo 3-piece chrismas quilt set BedSpread Set ",
+      prize: "Sale:$65.00",
+      flag: "true",
+    },
+    {
+      id: 2,
+      image:
+        " https://tse4.mm.bing.net/th?id=OIP.LYhzAGM2cWktDH_Hoav4lwHaHa&pid=Api&P=0  ",
+      dec: "Tis the Season 3-pc Coverlet bedding set",
+      prize: "Sale:$90.00",
+      flag: "true",
+    },
+    {
+      id: 3,
+      image:
+        " https://tse1.mm.bing.net/th?id=OIP.3IrG5yDRMz_49e2X53U3-QHaHz&pid=Api&P=0 ",
+      dec: "Plaid Patchwork christmas quilt Beadspread Set",
+      prize: "Sale:$100.24",
+      flag: "true",
+    },
+    {
+      id: 4,
+      image:
+        "https://tse2.mm.bing.net/th?id=OIP.pYO8bxunecnj0FwHXoNLUAHaHa&pid=Api&P=0",
+      dec: "Cozy Line RoseMond 3-piece Floral Patchwork  Bedsheets",
+      prize: "Sale:$76.00",
+      flag: "true",
+    },
+    {
+      id: 5,
+      image:
+        "https://tse1.mm.bing.net/th?id=OIP.MLDQ7wRmddQYfoOqZTfdAQHaF5&pid=Api&P=0 ",
+      dec: "Christmas 3-pc king coverlet Donna Sharp Quilt Set",
+      prize: "Sale:$20.75",
+      flag: "true",
+    },
+    {
+      id: 6,
+      image:
+        "https://tse3.mm.bing.net/th?id=OIP.ebx_H3YfSlMHjCg3_S5u6AHaHa&pid=Api&P=0",
+      dec: "Cozy comfy 3-piece king size bedspread",
+      prize: "Sale:$55",
+      flag: "true",
+    },
+    {
+      id: 7,
+      image:
+        "https://tse4.mm.bing.net/th?id=OIP.abhmO9xwMdGhMTfh3HPPGQHaJk&pid=Api&P=0",
+      dec: "Carbon lloft Allain 3-piece Reversible Quilt Set",
+      prize: "Sale:$70",
+      flag: "true",
+    },
+    {
+      id: 8,
+      image:
+        "https://tse3.mm.bing.net/th?id=OIP.FCHldmjXJhRMkqDQw1aH_gHaE7&pid=Api&P=0",
+      dec: "Christmas special bedSpread with pillow cover",
+      prize: "Sale:$30.98",
+      flag: "true",
+    },
+    {
+      id: 9,
+      image:
+        "https://tse3.mm.bing.net/th?id=OIP.n3FyQsKBZEp2E4MfMOLbGwHaHa&pid=Api&P=0",
+      dec: "Crazy halloween christmas new year ",
+      prize: "Sale:$89",
+      flag: "true",
+    },
+    {
+      id: 10,
+      image:
+        "https://tse3.mm.bing.net/th?id=OIP.n3FyQsKBZEp2E4MfMOLbGwHaHa&pid=Api&P=0",
+      dec: "Crazy halloween christmas new year ",
+      prize: "Sale:$86",
+      flag: "true",
+    },
+  ];
+  localStorage.setItem("user", JSON.stringify(data));
+  let data1 = JSON.parse(localStorage.getItem("user"));
+  var i = 1;
+
+  function data_append(data) {
+    data.forEach((d) => {
+      // console.log(image);l
+      let l = d.id;
+      let div1 = document.getElementById("c" + i);
+      let img = document.createElement("img");
+      img.src = d.image;
+      img.style.border = ".2px solid grey";
+      let p = document.createElement("h3");
+      p.innerText = d.prize;
+      let p1 = document.createElement("div");
+      p1.innerText = d.dec;
+      p1.style.color = "rgb(47, 51, 55)";
+      p.style.marginBottom = "5px";
+      p.style.color = "Red";
+      let div2 = document.createElement("div");
+      div2.append(p, p1);
+      div1.append(img, div2);
+      div1.addEventListener("click", () => {
+        cart(d);
+      });
+      i++;
+    });
+  }
+  data_append(data1);
+
+  if (localStorage.getItem("items_buy") === null) {
+    localStorage.setItem("items_buy", JSON.stringify([]));
+  }
+
+  function cart(d) {
+    var cartData = JSON.parse(localStorage.getItem("items_buy"));
+
+    var flag = true;
+    for (let k = 0; k < cartData.length; k++) {
+      if (d.id === cartData[k].id) {
+        flag = false;
+        break;
+      }
+    }
+
+    if (flag) {
+      cartData.push(d);
+    }
+
+    localStorage.setItem("items_buy", JSON.stringify(cartData));
+  }
+  //page connection
+  let Rugs = document.querySelector(".bk1");
+  Rugs.addEventListener("click", () => {
+    window.location.href = "rugs.html";
+  });
+  let Living = document.querySelector(".bk3");
+  Living.addEventListener("click", () => {
+    window.location.href = "Decoration.html";
+  });
+  let jew = document.querySelector(".bk4");
+  jew.addEventListener("click", () => {
+    window.location.href = "jwellery.html";
+  });
+</script>
+
+<script type="module">
+  import { navbar, savelater } from "/overstock/components/navbar.js";
+  let header = document.querySelector("header");
+  header.innerHTML = navbar();
+  let item = document.querySelector(".hello");
+  item.addEventListener("click", savelater);
+</script>

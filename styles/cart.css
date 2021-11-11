@@ -1,0 +1,93 @@
+#items_cart {
+    width: 1349px;
+    height: 800px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.shoppingcart {
+    width: 930px;
+    height: 236px;
+    background-color: aquamarine;
+    border: 0.2px solid grey;
+}
+
+.payement {
+    width: 300px;
+    height: 160px;
+    background-color: rgb(171, 171, 224);
+    border: 0.2px solid grey;
+}
+
+.btn {
+    margin-left: 400px;
+    width: 120px;
+}
+
+.inner {
+    margin-left: 310px;
+}
+
+h4 {
+    margin-left: 330px;
+}
+
+.prize_me {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.prize_me1 {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.shop {
+    width: 280px;
+    margin-left: 10px;
+    height: 45px;
+    border-radius: 5px;
+    border: 0.2px solid grey;
+}
+
+.item {
+    width: 900px;
+    height: 1000px;
+}
+
+.items {
+    width: 890px;
+    height: 236px;
+
+    border: 0.2px solid grey;
+    display: flex;
+}
+
+.items .img {
+    height: 236px;
+    width: 236px;
+}
+
+.items .prod_detail {
+    width: 350px;
+    height: 236px;
+    padding-left: 10px;
+    color: black;
+}
+
+.items .click {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 180px;
+    font-size: 18px;
+}
+
+.close {
+    display: none;
+}
+

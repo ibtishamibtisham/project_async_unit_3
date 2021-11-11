@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #master {
+        width: 800px;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+      }
+      .signup {
+        height: 400px;
+        width: 300px;
+        background-color: rgb(250, 241, 241);
+        margin-top: 170px;
+        margin-right: 20px;
+      }
+      .signin {
+        height: 400px;
+        width: 300px;
+        background: rgb(250, 241, 241);
+        margin-top: 170px;
+        margin-left: 20px;
+      }
+      #password_box {
+        display: flex;
+        justify-content: space-between;
+      }
+      #password {
+        width: 140px;
+        height: 30px;
+      }
+      #c_pass {
+        width: 140px;
+        height: 30px;
+      }
+      #mailme {
+        width: 97%;
+        height: 30px;
+      }
+      #pwd {
+        width: 97%;
+        height: 30px;
+      }
+      #create_account {
+        width: 98%;
+        height: 30px;
+        margin-top: 30px;
+        margin-left: 3px;
+      }
+      #email {
+        width: 97.5%;
+        height: 30px;
+      }
+      h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="master">
+      <div class="signup">
+        <div id="account">
+          <h1>Create Account</h1>
+          <p class="create_account1" style="text-align: center">
+            Email Address
+          </p>
+          <input id="email" placeholder="Email" />
+          <div id="password_box">
+            <div id="create_pass">
+              <p class="create_account1" style="margin-left: 5px">
+                Create Password
+              </p>
+              <input id="password" type="text" placeholder="Password" />
+            </div>
+            <div id="confir_pass">
+              <p class="create_account1" style="margin-left: 10px">
+                Confirm Password
+              </p>
+              <input id="c_pass" type="text" placeholder="Confirm Password" />
+            </div>
+          </div>
+          <button
+            id="create_account"
+            style="background-color: #0272a2; border: none"
+            onclick="postData()"
+          >
+            Create Account
+          </button>
+        </div>
+      </div>
+
+      <div class="signin">
+        <div class="inp">
+          <h1>Sign In</h1>
+          <p style="margin: 2px; text-align: center; margin-bottom: 10px">
+            Email address
+          </p>
+          <input id="mailme" placeholder="email" />
+          <p
+            style="
+              margin: 2px;
+              margin-top: 10px;
+              margin-bottom: 10px;
+              text-align: center;
+            "
+          >
+            Password
+          </p>
+          <input id="pwd" placeholde="pwd" />
+          <button
+            id="create_account"
+            style="background-color: #27865f; border: none"
+            onclick="logindata()"
+          >
+            Log-In
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  async function postData() {
+    // e.preventDefault();
+    var data = {
+      Email: document.querySelector("#email").value,
+      Password: document.querySelector("#password").value,
+      c_pwd: document.querySelector("#c_pass").value,
+    };
+    var res = await fetch("http://localhost:3000/register", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    await res.json();
+  }
+
+  //   let url = "http://localhost:3000/register";
+  async function logindata() {
+    let res = await fetch("http://localhost:3000/register");
+    let data = await res.json();
+
+    let item1 = document.getElementById("mailme").value;
+    data.forEach(({ Email }) => {
+      if (item1 == Email) {
+        console.log("hello");
+      }
+    });
+  }
+</script>
